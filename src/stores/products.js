@@ -9,7 +9,7 @@ export const userProductsStore = defineStore({
   actions: {
     async fetchProducts() {
       await fetch("http://localhost:8080/api/products")
-        .then(response => response.json())
+        .then(resp => resp.json())
         .then((data) => {
           this.products = data;
         });
@@ -80,7 +80,7 @@ export const userProductsStore = defineStore({
       const url = 'http://localhost:8080/api/products/delete';
       const resp = await fetch(url, {
         method: 'DELETE', 
-/*         mode: 'cors', */
+        mode: 'cors', 
         cache: 'no-cache', 
         credentials: 'same-origin', 
         headers: {
@@ -90,15 +90,11 @@ export const userProductsStore = defineStore({
         referrerPolicy: 'no-referrer',
         body: JSON.stringify(data)
       });
-      /* .then(response => response.json()) */
       const json = await resp.json();
-
-/*       .then((data) => {
-        this.products = data;
-      }); */
-
-   /*    const resp = await fetch(url, {}) */
-/*       const json = await resp.json() */
+      if(json.message == "Product deleted successfully"){
+        this.fetchProducts();
+        console.log(json);
+      }
 
     },
 

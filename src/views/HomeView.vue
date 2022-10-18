@@ -46,11 +46,11 @@ const updatProduts = async () => {
 <template>
   <div class="home">
     <Product
-      v-for="product in productStore.products"
+      v-for="(product, index) in productStore.products"
+      :key= "index"
       :id= "product.id"
       :name = "product.name"
       :cantidad = "product.cantidad"
-      @deleteProduts= "deleteProduts"
     /> 
 
 

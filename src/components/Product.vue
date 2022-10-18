@@ -3,15 +3,7 @@
     <h2>{{ id }}</h2>
     <h2>{{ name }}</h2>
     <h2>{{ cantidad }}</h2>
-    <button @click="emitProduct" class="btn btn-danger"></button>
-    <form action="deleteData" method="DELETE">
-
-
-    </form>
-      
-   
-             
-   
+ <button @click="store.deleteData(props)" class="btn btn-danger">x</button>
   </div>
   
     
@@ -19,9 +11,14 @@
 </template>
 
 <script setup>
-const emits = defineEmits(['deleteProduts'])
+import { userProductsStore } from "../stores/products";
+const store = userProductsStore();
 
 const props = defineProps({
+  index: {
+    type: Number
+  },
+
   id: {
     type: Number,
     default: null,
@@ -36,11 +33,7 @@ const props = defineProps({
   },
 });
 
-const emitProduct = () => {
-/*   emits('deleteProduts', props.id , props.name , props.cantidad) */
-emits('deleteProduts', props)
 
-}
 
 </script>
 
