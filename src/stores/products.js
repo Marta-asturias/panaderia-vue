@@ -102,18 +102,3 @@ export const userProductsStore = defineStore({
   },
 });
 
-
-
-
-
-
-/* addProducts(products) {
-  console.log('add products')
-  this.data.push(products);
-}
-deleteProducts(products) {
-  this.data.splice(this.data.indexOf(products), 1)
-  if (window.updateProducts != null) {
-    window.updateProducts.call(window.homeInstance)
-  }
-} */
