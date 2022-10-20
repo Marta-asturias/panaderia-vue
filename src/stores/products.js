@@ -34,8 +34,9 @@ export const userProductsStore = defineStore({
       });
     }, */
 
-    async postData(url = 'http://localhost:8080/api/products', data = {}) {
-      const response = await fetch(url, {
+    async postData(data) {
+      const url = 'http://localhost:8080/api/products/create';
+      const resp = await fetch(url, {
         method: 'POST', 
         mode: 'cors', 
         cache: 'no-cache', 
@@ -47,14 +48,14 @@ export const userProductsStore = defineStore({
         referrerPolicy: 'no-referrer', 
         body: JSON.stringify(data) 
       })
-      .then(response => response.json())
-      .then((data) => {
-        this.products = data;
-      });
+        const json = await resp.json(); 
+        this.fetchProducts();
+        console.log(json);
+      
     },
 
 
-        async putData(url = 'http://localhost:8080/api/products/{id}', data = {}) {
+/*         async putData(url = 'http://localhost:8080/api/products/{id}', data = {}) {
     
           const response = await fetch(url, {
             method: 'PUT', 
@@ -73,7 +74,7 @@ export const userProductsStore = defineStore({
           .then((data) => {
             this.products = data;
           });
-        },
+        }, */
 
  
     async deleteData(data) {

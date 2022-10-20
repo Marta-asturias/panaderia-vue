@@ -5,6 +5,10 @@
     <h2>{{ cantidad }}</h2>
  <button @click="store.deleteData(props)" class="btn btn-danger">x</button>
   </div>
+  <div>
+<v-model></v-model>
+
+  </div>
   
     
   

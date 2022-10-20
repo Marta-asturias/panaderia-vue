@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import Header from "../components/Header.vue";
+import ProductCreate from "../components/ProductCreate.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,6 +13,16 @@ const router = createRouter({
         default: HomeView,
         aside: Header,
       },
+    },
+    {
+      path: "/IngresarProducto",
+      name: "IngresarProducto",
+      components:{
+        default: ProductCreate,
+      }
+       
+
+ 
     },
     {
       path: "/about",
