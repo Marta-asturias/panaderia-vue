@@ -3,7 +3,7 @@
     <div>
 	   <input v-model="obj.name" placeholder="mete el producto" />
      <input v-model="obj.cantidad" placeholder="mete la cantidad" />
-      <button @click="store.postData( obj)" class="btn btn-danger">x</button> 
+      <button @click="store.postData(obj)" class="btn btn-danger">x</button> 
     </div>
     
       <h1>hola</h1>

@@ -55,8 +55,8 @@ export const userProductsStore = defineStore({
     },
 
 
-/*         async putData(url = 'http://localhost:8080/api/products/{id}', data = {}) {
-    
+        async putData(data) {
+          const url = url = 'http://localhost:8080/api/products/{id}';
           const response = await fetch(url, {
             method: 'PUT', 
             mode: 'cors', 
@@ -70,11 +70,12 @@ export const userProductsStore = defineStore({
             referrerPolicy: 'no-referrer', 
             body: JSON.stringify(data) 
           })
-          .then(response => response.json())
-          .then((data) => {
-            this.products = data;
-          });
-        }, */
+          const json = await resp.json(); 
+          this.fetchProducts();
+          console.log(json);
+        
+      },
+  
 
  
     async deleteData(data) {
