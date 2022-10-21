@@ -5,8 +5,8 @@
 <!--     <input v-model="name" />
      <input v-model="cantidad"  />  -->
      <span :class="'product-badge status-' + (props.cantidad,  props.name )">
-     <input v-model="name" /> <input v-model="cantidad"  /></span>
-     <Button @click="store.putData(obj)" class="btn btn-danger">edit</Button>
+     <input v-model="obj.name" /> <input v-model="obj.cantidad" /></span>
+     <Button @click="store.putData(obj, id)" class="btn btn-danger">edit</Button>
      <Button  @click="store.deleteData(props)" class="btn btn-danger">Borrar</Button>
   </div>
   
@@ -41,9 +41,9 @@ const store = userProductsStore();
 const message = ref('')
 
 const obj = reactive({
-
-name: "",
-cantidad: 0, 
+id: props.id,
+name: props.name,
+cantidad: props.cantidad, 
 }); 
 
 const props = defineProps({

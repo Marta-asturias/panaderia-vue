@@ -54,10 +54,11 @@ export const userProductsStore = defineStore({
       
     },
 
-
-        async putData(data) {
-          const url = url = 'http://localhost:8080/api/products/{id}';
-          const response = await fetch(url, {
+    
+        async putData(data, id) {
+          console.log(id);
+          const url = `http://localhost:8080/api/products/${id}`;
+          const resp = await fetch(url, {
             method: 'PUT', 
             mode: 'cors', 
             cache: 'no-cache', 
