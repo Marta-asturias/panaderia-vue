@@ -5,7 +5,7 @@ import ProductCreate from "../components/ProductCreate.vue";
 import ProductsView from '@/views/ProductsView.vue';
 import Footer from '@/components/Footer.vue';
 import ListProductView from '@/views/ListProductView.vue'
-
+import IngresarProductoView from '@/views/IngresarProductoView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -32,7 +32,7 @@ const router = createRouter({
       path: "/IngresarProducto",
       name: "IngresarProducto",
       components:{
-        default: ProductCreate,
+        default:IngresarProductoView /* ProductCreate */,
         aside: Header,
       },
     },

@@ -33,7 +33,6 @@ const getProduts = async () => {
       :referencia = "product.referencia"
     /> 
   </div>
-  <Footer></Footer>
 </template>
 <style scoped>
 .home{

@@ -1,33 +1,53 @@
 <template>
-
-    <div>
-	   <input v-model="obj.name" placeholder="mete el producto" />
-     <input v-model="obj.cantidad" placeholder="mete la cantidad" />
-     <input v-model="obj.referencia" placeholder="mete la referencia" />
-      <button @click="store.postData(obj)" class="btn btn-danger">x</button> 
+  <div class="conjunto-crear">
+    <div class="input-group">
+      <label for="basic-url" class="form-label">Ingresa El Producto
+        <input class="form-control" v-model="obj.name" />
+      </label>
+      <label for="basic-url" class="form-label">Ingresa La Cantidad
+        <input class="form-control" v-model="obj.cantidad" />
+      </label>
+      <label for="basic-url" class="form-label">Ingresa La Referencia
+        <input class="form-control" v-model="obj.referencia" />
+      </label>
+      <div class="boton-crear">
+        <button @click="store.postData(obj)" class="btn btn-outline-dark">Crear Producto</button>
+      </div>
     </div>
-    
-    
-  </template>
+  </div>
+
+</template>
   
-  <script setup>
-  import { reactive } from "vue";
-  import { userProductsStore } from "../stores/products";
+<script setup>
+import { reactive } from "vue";
+import { userProductsStore } from "../stores/products";
 
 
-  const store = userProductsStore();
-  const obj = reactive({
+const store = userProductsStore();
+const obj = reactive({
 
-    name: "",
-    cantidad: 0,
-    referencia: 0, 
-    }); 
+  name: "",
+  cantidad: 0,
+  referencia: 0,
+});
 
-  
 
+
+
+
+
+</script>
   
-  
-  
-  </script>
-  
-  <style scoped></style>
+<style scoped>
+.boton-crear {
+  margin-top: 24px;
+  height: 10px;
+  margin-left: 1%;
+}
+.conjunto-crear{
+  display: flex;
+justify-items: center;
+  margin-top: 15%;
+  margin-left: 25%;
+}
+</style>
