@@ -1,16 +1,14 @@
 <template>
-<table class="table-warning">
+<table class="table">
   <thead>
-    <tr>
-      <th scope="col">#</th>
+    <tr class="table-warning">
       <th scope="col">Nombre Del Producto</th>
-      <th scope="col">Rantidad Del Producto</th>
+      <th scope="col">Cantidad Del Producto</th>
       <th scope="col">Referencia Del Producto</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
+    <tr class="table-warning">
       <td>{{name}}</td>
       <td>{{cantidad}}</td>
       <td>{{referencia}}</td>

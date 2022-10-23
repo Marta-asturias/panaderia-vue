@@ -4,7 +4,6 @@ import Header from "../components/Header.vue";
 import ProductCreate from "../components/ProductCreate.vue";
 import ProductsView from '@/views/ProductsView.vue';
 import Footer from '@/components/Footer.vue';
-import ListProduct from '@/components/ListProduct.vue'
 import ListProductView from '@/views/ListProductView.vue'
 
 const router = createRouter({

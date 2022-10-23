@@ -3,7 +3,7 @@
 
     
     <div class="products">
-    <RouterLink class="listado" to="/Products">Listado</RouterLink>
+    <RouterLink class="listado" to="/listProduct">Listado</RouterLink>
     </div>
     <div class="cont-header">
       <h1 class="h1-header">Contabilidad Panaderia</h1>
