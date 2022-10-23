@@ -2,9 +2,8 @@
 import { onBeforeMount } from "vue";
 import { userProductsStore } from "../stores/products";
 import ListProduct from '@/components/ListProduct.vue'
-
-
-
+import Header from "../components/Header.vue";
+import Footer from "../components/Footer.vue";
 
 //store
 const productStore = userProductsStore();
@@ -15,7 +14,6 @@ onBeforeMount(() => {
 
 });
 
-
 //metodos
 const getProduts = async () => {
   await productStore.fetchProducts();
@@ -24,6 +22,7 @@ const getProduts = async () => {
 </script>
 
 <template>
+  <Header></Header>
   <div class="home">
     <ListProduct
       v-for="(product, index) in productStore.products"
@@ -33,11 +32,11 @@ const getProduts = async () => {
       :cantidad = "product.cantidad"
       :referencia = "product.referencia"
     /> 
-
   </div>
+  <Footer></Footer>
 </template>
 <style scoped>
-body {
-  background-color: aqua;
+.home{
+  height: 100%;
 }
 </style>

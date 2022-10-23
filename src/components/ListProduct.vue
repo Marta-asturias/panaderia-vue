@@ -1,16 +1,27 @@
 <template>
-    <div class="detallesproduct">
-      
-        <h2>{{name}}</h2>
-        <h2>{{cantidad}}</h2>
-        <h2>{{referencia}}</h2>
-      
-
-    </div>
+<table class="table-warning">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre Del Producto</th>
+      <th scope="col">Rantidad Del Producto</th>
+      <th scope="col">Referencia Del Producto</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{name}}</td>
+      <td>{{cantidad}}</td>
+      <td>{{referencia}}</td>
+    </tr>
+  </tbody>
+</table>
   </template>
   
   <script setup>
- 
+
+
   import { userProductsStore } from "../stores/products";
   import { ref } from 'vue'
   const store = userProductsStore();
@@ -42,6 +53,7 @@
   </script>
   
   <style scoped>
+  
   
   </style>
   
