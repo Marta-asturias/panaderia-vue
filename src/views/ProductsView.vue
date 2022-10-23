@@ -2,6 +2,7 @@
 import { onBeforeMount } from "vue";
 import { userProductsStore } from "../stores/products";
 import Product from "../components/Product.vue";
+import Header from "../components/Header.vue";
 
 
 
@@ -25,14 +26,18 @@ const getProduts = async () => {
 </script>
 
 <template>
+  <Header></Header>
+  <h2 class="edit-product">Modifica o Elimina El Producto</h2>
   <div class="home">
     <Product v-for="(product, index) in productStore.products" :key="index" :id="product.id" :name="product.name"
       :cantidad="product.cantidad" :referencia="product.referencia" />
-
   </div>
+
 </template>
 <style scoped>
-body {
-  background-color: aqua;
+.edit-product{
+    display: flex;
+    justify-content: center;
+    padding-top: 1%;
 }
 </style>

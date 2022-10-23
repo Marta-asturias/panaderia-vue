@@ -1,12 +1,22 @@
 <template>
-  <div class="detallesproduct">
-    <span :class="'product-badge status-' + (props.cantidad, props.name)">
-      <input v-model="obj.name" />
-      <input v-model="obj.cantidad" />
-      <input v-model="obj.referencia" />
-    </span>
-    <Button @click="store.putData(obj, id)" class="btn btn-danger">edit</Button>
-    <Button @click="store.deleteData(props)" class="btn btn-danger">Borrar</Button>
+  <div class="conjunto-edit-delete">
+    <div class="input-group">
+      <label for="basic-url" class="form-label">Modifica El Nombre
+        <input class="form-control" v-model="obj.name" />
+      </label>
+      <label for="basic-url" class="form-label">Modifica El Producto
+        <input class="form-control" v-model="obj.cantidad" />
+      </label>
+      <label for="basic-url" class="form-label">Modifica El Producto
+        <input class="form-control" v-model="obj.referencia" />
+      </label>
+      <div class="boton-crear">
+        <button @click="store.putData(obj, id)" class="btn btn-outline-dark">edit</button>
+      </div>
+      <div class="boton-crear">
+        <button @click="store.deleteData(props)" class="btn btn-outline-dark">Borrar</button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -48,5 +58,18 @@ const props = defineProps({
 </script>
 
 <style scoped>
+.boton-crear {
+  margin-top: 24px;
+  height: 10px;
+  margin-left: 1%;
+}
+
+.conjunto-edit-delete {
+  display: flex;
+  justify-items: center;
+  margin-top: 2%;
+  margin-left: 25%;
+}
+
 
 </style>
