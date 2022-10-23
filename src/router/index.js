@@ -2,6 +2,10 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import Header from "../components/Header.vue";
 import ProductCreate from "../components/ProductCreate.vue";
+import ProductsView from '@/views/ProductsView.vue';
+import Footer from '@/components/Footer.vue';
+import ListProduct from '@/components/ListProduct.vue'
+import ListProductView from '@/views/ListProductView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,18 +16,38 @@ const router = createRouter({
       components: {
         default: HomeView,
         aside: Header,
+        aside: Footer,
       },
     },
+
+    {
+      path: "/Products",
+      name: "products",
+      components: {
+        default: ProductsView,
+        aside: Header,
+      },
+    },
+    
     {
       path: "/IngresarProducto",
       name: "IngresarProducto",
       components:{
         default: ProductCreate,
-      }
-       
-
- 
+        aside: Header,
+      },
     },
+
+    {
+      path: "/ListProduct",
+      name: "ListProduct",
+      components:{
+        default: ListProductView,
+        aside: Header,
+        aside: Footer,
+      },
+    },
+
     {
       path: "/about",
       name: "about",

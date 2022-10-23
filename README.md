@@ -39,3 +39,7 @@ npm run test:unit
 ```sh
 npm run lint
 ```
+- npm i
+- npm install primevue@^3.17.1-SNAPSHOT --save
+- npm install primeicons --save
+- npm install primevue@^3.17.1-SNAPSHOT --force

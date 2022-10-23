@@ -3,10 +3,10 @@
     <div>
 	   <input v-model="obj.name" placeholder="mete el producto" />
      <input v-model="obj.cantidad" placeholder="mete la cantidad" />
+     <input v-model="obj.referencia" placeholder="mete la referencia" />
       <button @click="store.postData(obj)" class="btn btn-danger">x</button> 
     </div>
     
-      <h1>hola</h1>
     
   </template>
   
@@ -19,7 +19,8 @@
   const obj = reactive({
 
     name: "",
-    cantidad: 0, 
+    cantidad: 0,
+    referencia: 0, 
     }); 
 
   

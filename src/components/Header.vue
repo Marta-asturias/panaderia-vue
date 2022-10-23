@@ -1,22 +1,48 @@
 <template>
-  <div id="header">
-    <div class="sidebar-header">
-      <span>nombre</span>
+  <header class="header">
+
+    
+    <div class="products">
+    <RouterLink class="listado" to="/Products">Listado</RouterLink>
     </div>
-    <div class="sidebar-nav">
-      <router-link to="/">Home</router-link>
-      <router-link to="/about">About</router-link>
+    <div class="cont-header">
+      <h1 class="h1-header">Contabilidad Panaderia</h1>
     </div>
-    <div class="sidebar-footer">
-      <span>footer</span>
+    <div class="añadir">
+      <RouterLink class="listado" to="/IngresarProducto">Añadir</RouterLink>
     </div>
-  </div>
+ 
+
+  </header>
 </template>
 
-<script setup></script>
+<script setup>
+</script>
 
 <style scoped>
-body {
-  background-color: aqua;
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 150px;
+  background-color: black;
+  border: 6px solid #FBC02D;
+}
+.añadir{
+padding-top: 3%;
+margin-right: 2%;
+}
+.h1-header{
+display: flex;
+ justify-content: center;
+  padding-top: 15%;
+  color: gold;
+}
+.products{
+padding-top: 3%;
+margin-left: 2%;
+}
+.listado{
+  color: #FBC02D;
 }
 </style>

@@ -1,63 +1,33 @@
 <script setup>
-import { onBeforeMount } from "vue";
-import { userProductsStore } from "../stores/products";
-import Product from "../components/Product.vue";
+import Header from "../components/Header.vue";
+import Footer from "../components/Footer.vue";
 
 
-//store
-const productStore = userProductsStore();
-
-//ciclo de vida
-onBeforeMount(() => {
-  getProduts();
- /*  creatProduts();
-  updatProduts(); */
-/*   deletProduts(); */
-
-});
-
-
-//metodos
-const getProduts = async () => {
-  await productStore.fetchProducts();
-};
-/* const creatProduts = async () => {
-  await productStore.postData(url = 'http://localhost:8080/api/products', data = {});
-
-};
-const updatProduts = async () => {
-  await productStore.putData(url = 'http://localhost:8080/api/products/{id}', data = {});
-
-}; */
-/* const deletProduts = async () => {
-  await productStore.deleteData(url='http://localhost:8080/api/products/delete', data);
-  
- 
-
-}; */
-
-    
-      
-
-    
   
 </script>
 
 <template>
-  <div class="home">
-    <Product
-      v-for="(product, index) in productStore.products"
-      :key= "index"
-      :id= "product.id"
-      :name = "product.name"
-      :cantidad = "product.cantidad"
-    /> 
-
-
+<div>
+<Header></Header>
+<main>
+  <div class="main">
+    <img src="../assets/img/88297804-441b-4d1f-a25f-d6d3cb3ed6d1.jpg" alt="">
   </div>
+</main>
+<Footer></Footer>
+</div>
+
+
 </template>
-<style scoped>
-body {
-  background-color: aqua;
+
+<style lang="css">
+body{
+  background-color: gold;
 }
+.main{
+  display: flex;
+  justify-content: center;
+  background-color: black;
+}
+
 </style>
