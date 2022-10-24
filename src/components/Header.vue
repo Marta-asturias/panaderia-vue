@@ -3,18 +3,18 @@
     <div class="cont-header">
       <h1 class="h1-header">Contabilidad Panaderia</h1>
     </div>
-    <div class="link">
-      <div class="products">
+    <div class="cont-link">
+      <div class="home">
         <RouterLink class="listado" to="/listProduct">Listado</RouterLink>
       </div>
 
-      <div class="añadir">
+      <div class="home">
         <RouterLink class="listado" to="/IngresarProducto">Añadir</RouterLink>
       </div>
       <div class="home">
         <RouterLink class="listado" to="/">Home</RouterLink>
       </div>
-      <div class="editar">
+      <div class="home">
         <RouterLink class="listado" to="/Products">Modificar</RouterLink>
       </div>
 
@@ -27,37 +27,41 @@
 
 <style scoped>
 .header {
-  display: flex;
   width: 100%;
   height: 150px;
   background-color: black;
   border: 6px solid #FBC02D;
 }
-.link{
+
+.cont-link {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  height: 45px;
+  align-items: flex-end;
 }
 
-.añadir {
-  padding-top: 3%;
-  margin-right: 2%;
+.cont-header {
+  display: flex;
+  justify-content: space-around;
+  height: 50px;
+  align-items: flex-end;
+  margin-top: 3%;
 }
+
 
 
 .h1-header {
   display: flex;
   justify-content: center;
-  padding-top: 15%;
   color: gold;
-  
+
 }
 
-.products {
-  padding-top: 3%;
-  margin-left: 2%;
-}
+
 
 .listado {
   color: #FBC02D;
 }
+
+
 </style>
