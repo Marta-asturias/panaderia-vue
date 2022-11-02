@@ -39,7 +39,7 @@
       required: true,
     },
     cantidad: {
-      type: String,
+      type: Number,
       required: true,
     },
     referencia: {

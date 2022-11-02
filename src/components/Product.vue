@@ -5,17 +5,23 @@
         <input class="form-control" v-model="obj.name" />
       </label>
       <label for="basic-url" class="form-label">Modifica El Producto
-        <input class="form-control" v-model="obj.cantidad" />
+        <input class="form-control"  v-model.number="obj.cantidad" type="number"/>
+      </label>
+      <label for="basic-url" class="form-label">añade cantidad
+        <input class="form-control" v-on:input="objcantidad()" v-model.number="obj.cantidadasumar" type="number"/>
       </label>
       <label for="basic-url" class="form-label">Modifica El Producto
         <input class="form-control" v-model="obj.referencia" />
       </label>
       <div class="boton-crear">
-        <button @click="store.putData(obj, id)" class="btn btn-outline-dark">edit</button>
+        
+        <button @click="store.putData(obj, id)" class="btn btn-outline-dark">edit
+        </button>
       </div>
       <div class="boton-crear">
         <button @click="store.deleteData(props)" class="btn btn-outline-dark">Borrar</button>
       </div>
+      
     </div>
   </div>
 </template>
@@ -31,6 +37,7 @@ const obj = reactive({
   name: props.name,
   cantidad: props.cantidad,
   referencia: props.referencia,
+  cantidadasumar: 0,
 });
 const props = defineProps({
   index: {
@@ -46,7 +53,7 @@ const props = defineProps({
     required: true,
   },
   cantidad: {
-    type: String,
+    type: Number,
     required: true,
   },
   referencia: {
@@ -54,7 +61,11 @@ const props = defineProps({
     required: true,
   },
 });
-
+ 
+  const objcantidad = function() {
+   return obj.cantidad= (parseInt(obj.cantidadasumar) + parseInt(props.cantidad))
+   }
+ 
 </script>
 
 <style scoped>
