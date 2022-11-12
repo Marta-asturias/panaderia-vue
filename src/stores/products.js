@@ -99,7 +99,7 @@ export const userProductsStore = defineStore({
       });
       const json = await resp.json();
       this.fetchProducts();
-      alert('Acabas de actualizar el producto')
+      alert('Acabas de Eliminar el producto')
       window.location.href = "/listProduct";
      
 
