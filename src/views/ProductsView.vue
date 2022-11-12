@@ -27,7 +27,7 @@ const getProduts = async () => {
 
 <template>
   <Header></Header>
-  <h2 class="edit-product">Modifica o Elimina El Producto</h2>
+  <h2 class="edit-product">Añade o Resta Cantidad, Modifica o Elimina El Producto</h2>
   <div class="home">
     <Product v-for="(product, index) in productStore.products" :key="index" :id="product.id" :name="product.name"
       :cantidad="product.cantidad" :referencia="product.referencia" />

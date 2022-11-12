@@ -50,7 +50,8 @@ export const userProductsStore = defineStore({
       })
         const json = await resp.json(); 
         this.fetchProducts();
-        console.log(json);
+        alert('Acabas de Crear producto')
+        window.location.href = "/listProduct";
       
     },
 
@@ -73,7 +74,10 @@ export const userProductsStore = defineStore({
           })
           const json = await resp.json(); 
           this.fetchProducts();
-          console.log(json);
+          alert('Acabas de actualizar el producto')
+          window.location.href = "/listProduct";
+
+
         
       },
   
@@ -94,10 +98,10 @@ export const userProductsStore = defineStore({
         body: JSON.stringify(data)
       });
       const json = await resp.json();
-      if(json.message == "Product deleted successfully"){
-        this.fetchProducts();
-        console.log(json);
-      }
+      this.fetchProducts();
+      alert('Acabas de actualizar el producto')
+      window.location.href = "/listProduct";
+     
 
     },
 
